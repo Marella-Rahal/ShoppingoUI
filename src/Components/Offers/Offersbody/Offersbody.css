@@ -1,0 +1,81 @@
+* {
+  font-family: Sansation;
+  font-style: normal;
+}
+.back-offers {
+  width: 100vw;
+  min-height: 140vh;
+  background-color: #fbf2d1;
+}
+.product-offers {
+  position: relative;
+  margin-left: 170px;
+  margin-right: 30px;
+  margin-top: -750px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.dropdown {
+  float: right;
+  margin: 50px 40px 10px 10px;
+}
+.dropdown-btn {
+  background-color: #f4c444;
+  color: #0e1d51;
+  border: none;
+  border-radius: 50px;
+  width: 130px;
+  height: 35px;
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 115px;
+  width: 200px;
+  z-index: 1;
+  box-shadow: 0px 15px 10px 7px rgba(0, 0, 0, 0.4);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content button {
+  display: block;
+  width: 200px;
+  color: #0e1d51;
+  border: none;
+  background-color: white;
+}
+.dropdown-content button:hover {
+  background-color: #0e1d51;
+  color: white;
+}
+
+.dropdown-content .go-btn {
+  border: solid 1px #0e1d51;
+  border-radius: 50px;
+  width: 50px;
+  margin-top: 5px;
+}
+.dropdown-content .go-btn:hover {
+  border: solid 2px white;
+}
+.classificationbar {
+  margin: 0px;
+  padding: 50px 30px 30px 20px;
+  width: 250px;
+  line-height: 33px;
+}
+
+.classificationbar button {
+  width: 130px;
+  border: none;
+  background-color: #f4c444;
+  border-radius: 50px;
+  color: #0e1d51;
+}
