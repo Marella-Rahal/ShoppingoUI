@@ -248,7 +248,8 @@ return(
                         </Link>
 
                         <div style={{ marginTop: "10px", fontSize: '15px' }}>
-                        Hello , {user.user.name}</div>
+                        Hello , user 
+                        {user.user.name}</div>
 
                         <HeaderImage image={image} ></HeaderImage>
 
@@ -264,7 +265,8 @@ return(
 
                             <Paragraph>Total income</Paragraph>
                             <div style={{ display: "flex", width: "100%", justifyContent: "space-between", alignItems: "center" }}>
-                            <Paragraph>{user.user.income} S.P</Paragraph>
+                            <Paragraph>{user.user.income} 
+                            2000000 S.P</Paragraph>
                             <button style={{background:"none",border:"none",color: "#11324D"}} onClick={handlePopup}>
                                 <AddCircleOutlineIcon style={{ marginRight: "15px", fontSize: "xx-large" }}></AddCircleOutlineIcon>
                             </button>
@@ -273,7 +275,8 @@ return(
 
                         <PaymentsInfo style={{ margin: '0px 5%' }}>
                             <Paragraph>Balance</Paragraph>
-                            <Paragraph>{user.user.totalBalance} S.P</Paragraph>
+                            <Paragraph>{user.user.totalBalance}
+                            1900000 S.P</Paragraph>
                         
                         </PaymentsInfo>
 
@@ -282,7 +285,8 @@ return(
                             Total Payments
                             </Paragraph>
                             <div style={{ display: "flex", width: "100%", justifyContent: "space-between", alignItems: "center" }}>
-                            <Paragraph>{user.user.totalPayments} S.P </Paragraph>
+                            <Paragraph>{user.user.totalPayments}
+                            100000 S.P </Paragraph>
                             
                             <Link to='/Mangment/Dashbord' style={{ marginRight: "10px",textDecoration: "none" , color: "#6b7aa1" ,fontSize:"small"}}>View All<KeyboardDoubleArrowRightIcon style={{fontSize:"small"}}/></Link>
                             </div>

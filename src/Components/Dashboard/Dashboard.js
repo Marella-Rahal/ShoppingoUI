@@ -153,7 +153,8 @@ const defaultbarchar={
           </Link>
 
           <div style={{ marginTop: '7px', fontSize: '15px' }}>
-            Hello , {user.user.name}
+            Hello , user 
+            {/* {user.user.name} */}
           </div>
 
 
@@ -168,7 +169,8 @@ const defaultbarchar={
 
               <Paragraph>Total income</Paragraph>
               <div style={{ display: "flex", width: "100%", justifyContent: "space-between", alignItems: "center" }}>
-                <Paragraph> {userInfo.income} S.Y.P</Paragraph>
+                <Paragraph> {userInfo.income}
+                2000000 S.Y.P</Paragraph>
                 <button style={{background:"none",border:"none",color: "#11324D"}} onClick={handlePopup}>
                   <AddCircleOutlineIcon style={{ marginRight: "15px", fontSize: "xx-large" }}></AddCircleOutlineIcon>
                 </button>
@@ -176,7 +178,10 @@ const defaultbarchar={
             </PaymentsInfo>
             <PaymentsInfo style={{ margin: '0px 5%' }}>
               <Paragraph>Balance</Paragraph>
-              <Paragraph>{userInfo.totalBalance} S.Y.P</Paragraph>
+              <Paragraph>
+              
+                {/* {userInfo.totalBalance} */}
+                1900000  S.Y.P</Paragraph>
             
             </PaymentsInfo>
 
@@ -185,7 +190,8 @@ const defaultbarchar={
                 Total Payments
               </Paragraph>
               <div style={{ display: "flex", width: "100%", justifyContent: "space-between", alignItems: "center" }}>
-              <Paragraph>{userInfo.totalPayments} S.Y.P </Paragraph>
+              <Paragraph>{userInfo.totalPayments}
+              100000 S.Y.P </Paragraph>
               
               {/* <Link to='#'style={{ marginRight: "10px",textDecoration: "none" , color: "#6b7aa1" ,fontSize:"small"}} onClick={()=>{route('#')}}>View All<KeyboardDoubleArrowRightIcon style={{fontSize:"small"}}/></Link> */}
               </div> 
@@ -200,6 +206,31 @@ const defaultbarchar={
                     </Span>
                     <Button onClick={()=>{route('/Mangment/InsertRequiredPayments')}}>Insert New Payment</Button>              
                   </TlSection>
+
+
+
+                  <Bsection>
+                    <BsectionContent>
+                      <span>
+                          Loan
+                      </span>
+                      <span>
+                          Until 
+                      </span>
+                    </BsectionContent>
+                    <BsectionContent>
+                      <span>
+                          1000000 SYP
+                      </span>
+                      <span>
+                          21-3-2025
+                      </span>
+                    </BsectionContent>
+                  </Bsection>
+
+
+
+
                   {reqpayment?reqpayment.map((props,index)=>{
                     return(
                   <Bsection>
@@ -219,7 +250,10 @@ const defaultbarchar={
                           {props["date"]} 
                       </span>
                     </BsectionContent>
-                  </Bsection>)}):"Loading..."}
+                  </Bsection>)})
+                  :""
+                  // :"Loading..."
+                }
                  
                     <Link to='/Mangment/RequiredPayments'style={{ marginRight: "10px",textDecoration: "none" , color: "#6b7aa1" ,fontSize:"larger"}}>View All<KeyboardDoubleArrowRightIcon style={{fontSize:"small"}}/></Link>
               </Lsection>
@@ -233,6 +267,17 @@ const defaultbarchar={
                   </TlSection>
 
 
+                  <PaymentInfo>
+                      <div>
+                        <CreditCardIcon  style={{color: "#11324D",marginRight: "5px",marginBottom: "3px"}}/>
+                        <span style={{color: "#11324D"}}>Trip</span>
+                      </div>
+                       <span style={{color: " #6B7AA1"}}>100000 SYP</span>
+                   </PaymentInfo>
+
+
+
+
                   {Payment?
                    Payment.map((props,index)=>{
                     return(
@@ -243,8 +288,9 @@ const defaultbarchar={
                       </div>
                        <span style={{color: " #6B7AA1"}}>{props["value"]} SYP</span>
                    </PaymentInfo>
-                   )})
-                  :"Loading..."}
+                   )}):""
+                  // :"Loading..."
+                  }
 
 
                   </MiddleSectionContent>

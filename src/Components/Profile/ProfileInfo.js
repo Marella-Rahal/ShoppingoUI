@@ -177,7 +177,8 @@ function ProfileInfo(props) {
             </Link>
 
             <div style={{marginTop:'7px', fontSize: '15px' }}>
-              Hello , {userInfo.name}
+              Hello , user 
+              {userInfo.name}
             </div>
 
           

@@ -12,6 +12,8 @@ import NotePopup, { showPopupNote } from '../../PopUp/NotePopup';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { displayProduct } from '../../../Redux/Slices/ProductDetailSlice';
+import j from '../../../Images/Background.jpg';
+
 
 let coordsG={lat:0,lng:0};
 
@@ -223,7 +225,10 @@ function Productdetailbody(props) {
 
                     <div style={{margin:'20px',marginTop:'0px',color:'#0E1D51',fontWeight:'bold',display:'flex'}}>
 
-                        <img src={image} alt="product img" style={{width:'60%',height:'100%',borderRadius:'30px'}}/>
+                        <img 
+                        // src={image}
+                        src={j}
+                         alt="product img" style={{width:'60%',height:'100%',borderRadius:'30px'}}/>
 
                         <div style={{display:'flex',flexDirection:'column',justifyContent:'space-evenly'}}>
                             <button type='submit' className='add-shoppingcard'>Add to <AddShoppingCart/></button>
@@ -237,7 +242,10 @@ function Productdetailbody(props) {
                     <Details name="Description" content={description}/>
 
                     <p ref={description} style={{color:'#6B7AA1',fontWeight:'bold',marginInline:'20px'}}>
-                        { (Object.keys(product).length)&&(id==product.id)?product.description:"Loading ..."}
+                        { (Object.keys(product).length)&&(id==product.id)?product.description
+                        // :"Loading ..."
+                        :"Cotton Black Shirt"
+                        }
                     </p>
 
                     {/* //todo: Colors and the Arrow button and the content   */}
@@ -245,6 +253,12 @@ function Productdetailbody(props) {
                     <Details name="Colors" content={color}/>
 
                     <div ref={color} style={{marginInline:'20px'}}>
+
+                     <Colors color="red"  setColors={setColors}/>
+                     <Colors color="blue"  setColors={setColors}/>
+                     <Colors color="pink"  setColors={setColors}/>
+                     <Colors color="Yellow"  setColors={setColors}/>
+                        
                         {
 
                                 (Object.keys(product).length)&&(id==product.id)?
@@ -255,7 +269,8 @@ function Productdetailbody(props) {
 
                                     })
 
-                                :<h6 style={{color:'#6B7AA1',fontWeight:'bold'}}>Loading ...</h6>
+                                // :<h6 style={{color:'#6B7AA1',fontWeight:'bold'}}>Loading ...</h6>
+                                :""
                         }
 
                     </div>
@@ -264,7 +279,12 @@ function Productdetailbody(props) {
 
                     <Details name="Sizes" content={size}/>
 
+                   
                     <div ref={size} style={{marginInline:'20px',color:'#0E1D51'}}> 
+                    <Sizes  size='m' setSizes={setSizes}/>
+                    <Sizes  size='l' setSizes={setSizes}/>
+                    <Sizes  size='xl' setSizes={setSizes}/>
+                    <Sizes  size='xxl' setSizes={setSizes}/>
 
                         {   
                              (Object.keys(product).length)&&(id==product.id)?
@@ -272,8 +292,8 @@ function Productdetailbody(props) {
 
                                     return <Sizes  key={index} size={one} setSizes={setSizes}/>
 
-                                }):
-                                <h6 style={{color:'#6B7AA1',fontWeight:'bold'}}>Loading ...</h6>
+                                }):""
+                                // <h6 style={{color:'#6B7AA1',fontWeight:'bold'}}>Loading ...</h6>
                         }
 
                     </div>
@@ -286,10 +306,23 @@ function Productdetailbody(props) {
                     <div ref={price_loc} style={{marginInline:'20px',color:'#6B7AA1',fontWeight:'bold'}}>
 
                         <h6 style={{color:'#6B7AA1',fontWeight:'bold'}}>
-                            { (Object.keys(product).length)&&(id==product.id)?product.name:"Loading ..."}    
+                            { (Object.keys(product).length)&&(id==product.id)?product.name
+                            // :"Loading ..."
+                            :"For_You"
+                            }    
                         </h6>
 
+                        <div style={{display:'flex',flexWrap:'wrap',maxWidth:'340px',height:'fit-content'}}>
+                                <h6 style={{textDecoration:'line-through',color:'red',marginRight:'15px'}}>
+                                    30000 s.p
+                                </h6>
+                                <h6>
+                                    20000 s.p
+                                </h6>
+                        </div>
+
                         {
+                           
                              (Object.keys(product).length)&&(id==product.id)?
                                 (
                                     product.old!==product.new?
@@ -323,8 +356,9 @@ function Productdetailbody(props) {
 
                 </form>
 
-                {
-
+                <Map coords={coordsG}/>
+                {/* {
+                    
                     (Object.keys(product).length)&&(id==product.id)?
 
                     <Map coords={coordsG}/>:
@@ -333,7 +367,7 @@ function Productdetailbody(props) {
                         <h3>Map Is Loading ...</h3>
                     </div>
 
-                }
+                } */}
                                 
                 
             </div>

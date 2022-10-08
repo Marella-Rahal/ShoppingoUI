@@ -5,6 +5,8 @@ import mapboxgl from 'mapbox-gl';
 import Marker from '../Marker/Marker';
 import { useDispatch, useSelector } from 'react-redux';
 import { mapProduct } from '../../../../Redux/Slices/ProductDetailSlice';
+import j from '../../../../Images/Background.jpg';
+
 
 mapboxgl.accessToken ='pk.eyJ1IjoibWFyZWxsYSIsImEiOiJjbDIwaWJvcGowd2x1M2tucnB6ZmNsY3JoIn0.CVo2zzXXWwAj2mVDnwagvg';
 
@@ -30,7 +32,7 @@ export default function Map(props){
 
   const [lng, setLng] = useState(props.coords.lng);
   const [lat, setLat] = useState(props.coords.lat);
-  const [zoom, setZoom] = useState(12);
+  const [zoom, setZoom] = useState(1);
 
   // Initialize map when component mounts
   useEffect(() => {
@@ -71,6 +73,22 @@ export default function Map(props){
 
  
     function addMarkers(marker,markerColor) {
+
+      const el = document.createElement('div');
+      el.className = 'marker';
+      ReactDOM.render(<Marker image={j} color='orange'/>,el);
+
+       new mapboxgl.Marker(el,{offset:[0,-10]})
+       .setLngLat([0,0])
+       .addTo(map);
+
+      el.addEventListener('click', (e) => {
+
+        flyToStore(marker.coo);
+
+        createPopUp(marker,'orange');
+      
+      });
 
       if((markerColor=='green'&&Object.keys(marker).length)||(markerColor=='orange'&&Object.keys(marker).length)){
 
@@ -137,8 +155,11 @@ export default function Map(props){
 
     function flyToStore(coords) {
       map.flyTo({
-        center: coords,
-        zoom: 17
+        // center: coords,
+        center: [0,0],
+        // zoom: 17
+        zoom: 5
+
       });
     }
 
@@ -155,12 +176,23 @@ export default function Map(props){
       const my_popup=
       <>
           <h4 style={{backgroundColor:markerColor}}>
-            {marker.name}
+            {/* {marker.name} */}
+            For_You
           </h4>
 
           <h5 style={{color:markerColor}}>
 
-            {
+          <span>
+
+            <span style={{display:'block',textDecoration:'line-through'}}>
+            30000&nbsp;s.p
+            </span>
+
+            20000&nbsp;s.p
+
+          </span>
+
+            {/* {
               marker.old!=marker.new?
               <span>
 
@@ -174,7 +206,7 @@ export default function Map(props){
               <span>
                 {marker.old}&nbsp;s.p
               </span>
-            }
+            } */}
 
           </h5>
       </>;
@@ -183,7 +215,8 @@ export default function Map(props){
       
 
       const popup = new mapboxgl.Popup({ closeOnClick: false })
-        .setLngLat(marker.coo)
+        // .setLngLat(marker.coo)
+        .setLngLat([0,0])
         .setDOMContent(my_popup_container)
         .addTo(map);
     }

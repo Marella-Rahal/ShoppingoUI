@@ -20,7 +20,9 @@ import { useSelector } from 'react-redux';
 import axios from 'axios';
 import NotePopup, { showPopupNote } from '../../PopUp/NotePopup';
 import styled from 'styled-components';
-import AddProduct from '../../AddProduct/Home/AddProduct'
+import AddProduct from '../../AddProduct/Home/AddProduct';
+import j from '../../../Images/Background.jpg';
+
 
 
 export const SellerButton=styled.button`
@@ -239,7 +241,7 @@ function DeleteProduct (productId){
             </Link>
   
             <div style={{ marginTop: '7px', fontSize: '15px' }}>
-              Hello , {user.user.name}
+              Hello , user{user.user.name}
             </div>
   
   
@@ -252,14 +254,14 @@ function DeleteProduct (productId){
           <PaymentsContainer style={{marginBottom:"30PX",justifyContent:'space-evenly'}}>
                 <PaymentsInfo>
                     <Paragraph style={{fontSize:'25px'}}>Total Income From Shoppingo</Paragraph>
-                    <Paragraph>{totalIncomeShop}</Paragraph>
+                    <Paragraph>{totalIncomeShop}0</Paragraph>
                 </PaymentsInfo>
                 
                 <PaymentsInfo>
                   <Paragraph style={{fontSize:'25px'}}>
                     number of user buy from seller
                   </Paragraph>
-                  <Paragraph>{NumberOfSelles} user </Paragraph>
+                  <Paragraph>{NumberOfSelles}0 user </Paragraph>
                   
                 </PaymentsInfo>
           </PaymentsContainer>
@@ -281,6 +283,35 @@ function DeleteProduct (productId){
                  <h1 style={{color:'#11324D',fontWeight:'400'}}>Product You Have In Site</h1>
                </TopProductSection>
                <ProductContainer>  
+
+
+
+
+
+               <div className='card' style={{width:'250px' ,marginInline:'10px',height:"350px",marginBottom:'20px',paddingBottom:'20px',borderRadius:'20px',boxShadow:'5px 5px 5px 5px rgba(0,0,0,0.25)'}} >
+               <div style={{height:"300px",maxHeight:"300px",overflow:"hidden"}}>
+               <img
+                // src={`http://localhost:5000/${props.imgUrl}`}
+                src={j}
+                 alt="product img" className="card-img-top" style={{borderRadius:'20px' ,width:"100%",height:"100%"}} />
+               </div>
+              
+   
+               <h4 className='text-center'  style={{color:'#0D065E'}}>Cotton Black Shirt</h4>
+   
+               {/* <h5 className='text-center' style={{color:'#7D6A06'}}>{props.newPrice}</h5> */}
+               <h5 className='text-center' style={{color:'#7D6A06'}}>20000</h5>
+
+   
+               <div style={{width:"100%",display:"flex",justifyContent:"space-around"}}>
+                   <SellerButton onClick={()=>{DeleteProduct(1)}}> Delete </SellerButton>
+                   <SellerButton onClick={()=>{toUpdateProduct(1)}}> Update </SellerButton>
+               </div>
+              </div>
+
+
+
+              
                
                {sellerProducts.length?sellerProducts.map((props,index)=>
               //  return<ProductCard productCateg={props.productCateg} imgUrl={props.imgUrl} newPrice={props.newPrice} key={index}/>
@@ -298,7 +329,7 @@ function DeleteProduct (productId){
                    <SellerButton onClick={()=>{DeleteProduct(props.productId)}}> Delete </SellerButton>
                    <SellerButton onClick={()=>{toUpdateProduct(props.productId)}}> Update </SellerButton>
                </div>
-           </div>
+              </div>
 
 
 
@@ -307,7 +338,9 @@ function DeleteProduct (productId){
                
                
                
-               ):<div style={{fontSize:"30px"}}>Waiting For Get Products...</div>}
+               ):""
+              //  :<div style={{fontSize:"30px"}}>Waiting For Get Products...</div>
+              }
                         
                </ProductContainer>
           </ProduactSection>  

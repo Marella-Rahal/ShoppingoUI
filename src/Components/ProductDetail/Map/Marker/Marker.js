@@ -9,7 +9,10 @@ function Marker({image,color}) {
 
             <button type='button' className='marker-btn' style={{backgroundColor:color,borderColor:color}}>
 
-                <img src={`http://localhost:5000/${image}`} alt="product image" className='marker-img'/> 
+                <img 
+                // src={`http://localhost:5000/${image}`}
+                src={image}
+                 alt="product image" className='marker-img'/> 
 
             </button>
     );

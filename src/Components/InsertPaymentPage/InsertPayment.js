@@ -147,7 +147,8 @@ function InsertP(props) {
             </Link>
 
             <div style={{ marginTop: '10px', fontSize: '15px' }}>
-              Hello , {user.user.name}
+              Hello , user 
+              {user.user.name}
             </div>
             <HeaderImage
               image={image}
@@ -168,7 +169,8 @@ function InsertP(props) {
                   alignItems: 'center',
                 }}
               >
-                <Paragraph>{user.user.income} S.P</Paragraph>
+                <Paragraph>{user.user.income} 
+                2000000 S.P</Paragraph>
                 <button
                   style={{
                     background: 'none',
@@ -185,7 +187,8 @@ function InsertP(props) {
             </PaymentsInfo>
             <PaymentsInfo style={{ margin: '0px 5%' }}>
               <Paragraph>Balance</Paragraph>
-              <Paragraph>{user.user.totalBalance} S.P</Paragraph>
+              <Paragraph>{user.user.totalBalance}
+              1900000 S.P</Paragraph>
             </PaymentsInfo>
 
             <PaymentsInfo>
@@ -198,7 +201,8 @@ function InsertP(props) {
                   alignItems: 'center',
                 }}
               >
-                <Paragraph>{user.user.totalPayments} S.P </Paragraph>
+                <Paragraph>{user.user.totalPayments}
+                100000 S.P </Paragraph>
 
                 <Link
                   to="/Mangment/Dashbord"

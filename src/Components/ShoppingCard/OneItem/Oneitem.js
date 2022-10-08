@@ -111,7 +111,10 @@ function Oneitem(props) {
 
                 <div className='items-padding'>
                     <h5>Photo</h5>
-                    <img src={`http://localhost:5000/${props.img}`} alt="Product img" style={{width:'100px',height:'100px',borderRadius:'20px'}}/>
+                    <img 
+                    // src={`http://localhost:5000/${props.img}`}
+                    src={props.img}
+                     alt="Product img" style={{width:'100px',height:'100px',borderRadius:'20px'}}/>
                 </div>
 
                 <div className='items-padding'>

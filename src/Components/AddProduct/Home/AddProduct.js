@@ -453,7 +453,7 @@ function AddProduct(props) {
             </Link>
 
             <div style={{ marginTop: '10px', fontSize: '15px' }}>
-              Hello , {user.user.name}
+              Hello , user{user.user.name}
             </div>
             <HeaderImage image={image}
               

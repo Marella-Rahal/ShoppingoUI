@@ -33,15 +33,15 @@ function App(props) {
            <Routes>
 
 
-                <Route element={<GetHomeData/>}>
+                {/* <Route element={<GetHomeData/>}> */}
                   <Route path='/' element={<Homebody/>}/>
                   <Route path='/Shop' element={<Shopbody/>}/>
                   <Route path='/Offers' element={<Offersbody/>}/>
-                </Route> 
+                {/* </Route>  */}
 
 
 
-                <Route element={<GetUserData/>}>
+                {/* <Route element={<GetUserData/>}> */}
 
                   <Route path="/Profile" element={<Profile/>}/>
 
@@ -66,19 +66,19 @@ function App(props) {
                   //todo admin
                   <Route path="/ConfirmSallers" element={<ConfirmSallers/>}/>
                   
-                </Route>
+                {/* </Route> */}
 
 
 
-                <Route element={<GetPaymentData/>}>
+                {/* <Route element={<GetPaymentData/>}> */}
                   <Route path="/Mangment/Payments" element={<Payment/>}/>
-                </Route>
+                {/* </Route> */}
 
 
 
-                <Route element={<GetPaymentReqData/>}>
+                {/* <Route element={<GetPaymentReqData/>}> */}
                   <Route path="/Mangment/RequiredPayments" element={<RequiredPayment/>}/>
-                </Route>
+                {/* </Route> */}
 
 
                 <Route path='/LogIn' element={<LogIn/>}/>

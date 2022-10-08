@@ -31,10 +31,14 @@ function Navbar(props) {
 
         if(token){
 
-            $('.sign-btn').css('display','none');
-            $('.log-btn').css('display','none');
-            $('.user-info').css('display','inline');
-            $('.image').css('display','inline');
+            // $('.sign-btn').css('display','none');
+            // $('.log-btn').css('display','none');
+            // $('.user-info').css('display','inline');
+            // $('.image').css('display','inline');
+            $('.sign-btn').css('display','inline');
+            $('.log-btn').css('display','inline');
+            $('.user-info').css('display','none');
+            $('.image').css('display','none');
             $('.image').css('marginRight','25px');
 
         }

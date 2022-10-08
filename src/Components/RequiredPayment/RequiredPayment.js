@@ -145,7 +145,7 @@ function RequiredPayment(props){
                         </Link>
 
                         <div style={{ marginTop: "10px", fontSize: '15px' }}>
-                        Hello , {user.name}</div>
+                        Hello , user{user.name}</div>
 
                         <HeaderImage image={image}></HeaderImage>
 
@@ -161,7 +161,8 @@ function RequiredPayment(props){
 
                             <Paragraph>Total income</Paragraph>
                             <div style={{ display: "flex", width: "100%", justifyContent: "space-between", alignItems: "center" }}>
-                            <Paragraph>{user.income} S.P</Paragraph>
+                            <Paragraph>{user.income}
+                            2000000 S.P</Paragraph>
                             <button style={{background:"none",border:"none",color: "#11324D"}} onClick={handlePopup}>
                                 <AddCircleOutlineIcon style={{ marginRight: "15px", fontSize: "xx-large" }}></AddCircleOutlineIcon>
                             </button>
@@ -170,7 +171,8 @@ function RequiredPayment(props){
 
                         <PaymentsInfo style={{ margin: '0px 5%' }}>
                             <Paragraph>Balance</Paragraph>
-                            <Paragraph>{user.totalBalance} S.P</Paragraph>
+                            <Paragraph>{user.totalBalance}
+                            1900000 S.P</Paragraph>
                         
                         </PaymentsInfo>
 
@@ -179,7 +181,8 @@ function RequiredPayment(props){
                             Total Payments
                             </Paragraph>
                             <div style={{ display: "flex", width: "100%", justifyContent: "space-between", alignItems: "center" }}>
-                            <Paragraph>{user.totalPayments} S.P </Paragraph>
+                            <Paragraph>{user.totalPayments}
+                            100000 S.P </Paragraph>
                             
                             <Link to='/Mangment/Dashbord' style={{ marginRight: "10px",textDecoration: "none" , color: "#6b7aa1" ,fontSize:"small"}}>View All<KeyboardDoubleArrowRightIcon style={{fontSize:"small"}}/></Link>
                             </div>
@@ -226,6 +229,12 @@ function RequiredPayment(props){
                     }}/>
 
                     <div style={{width:'97%',display:'flex',flexWrap:'wrap',justifyContent:'space-evenly'}}>
+
+                    <RequiredPaymentCard id='1' name='Loan' type='Bank' value='1000000' date='21-3-2025' repeater='1'
+                               rest='1000000'
+                               paid='0'
+                               monthly='25000'
+                               message='0'/>
 
                         {
                             req.map((onereq,index)=>{

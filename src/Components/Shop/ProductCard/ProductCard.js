@@ -22,7 +22,10 @@ function ProductCard(props) {
     return (
   
         <div className='card' style={{width:'270px' ,marginInline:'10px',marginBottom:'20px',paddingBottom:'20px',borderRadius:'20px',boxShadow:'5px 5px 5px 5px rgba(0,0,0,0.25)'}}>
-            <img src={`http://localhost:5000/${props.image}`} alt="product img" className="card-img-top" style={{borderRadius:'20px',height:"353px",maxHeight: '353px'}} onClick={()=>route(`/ProductDetail/${props.id}`)}/>
+            <img 
+            // src={`http://localhost:5000/${props.image}`}
+            src={props.image} 
+            alt="product img" className="card-img-top" style={{borderRadius:'20px',height:"353px",maxHeight: '353px'}} onClick={()=>route(`/ProductDetail/${props.id}`)}/>
 
             <button className='card-img-overlay heart-btn' onClick={future}>
             <Favorite/>

@@ -12,7 +12,7 @@ import SleepingPopup from '../../PopUp/SleepingPopup';
 // import useForceUpdate from 'use-force-update';
 // import InputItem from '../Classificationbar/InputItem';
 
-
+import j from '../../../Images/Background.jpg';
 
 function Shopbody(props) {
     
@@ -563,6 +563,11 @@ function Shopbody(props) {
 </div>    
 
             <div className="product">
+
+                <ProductCard image={j} desc='Cotton Black Shirt' price='30000' id='1'/>
+                <ProductCard image={j} desc='Cotton Black Shirt' price='30000' id='2'/>
+                <ProductCard image={j} desc='Cotton Black Shirt' price='30000' id='3'/>
+                <ProductCard image={j} desc='Cotton Black Shirt' price='30000' id='4'/>
                 {
                     offer?
                     offer.map(one=>{

@@ -7,6 +7,9 @@ import { useNavigate } from 'react-router';
 import axios from 'axios';
 import NotePopup, { showPopupNote } from '../../PopUp/NotePopup';
 
+import j from '../../../Images/Background.jpg';
+
+
 
 function Shoppingcardbody(props) {
 
@@ -65,6 +68,7 @@ function Shoppingcardbody(props) {
 
     const addToPayment=(e)=>{
 
+        route("/Mangment/Payments");
 
         axios.get('http://localhost:5000/cart/addCartToPayments',
                   {
@@ -169,6 +173,9 @@ function Shoppingcardbody(props) {
 
             <div className='items'>
 
+                <Oneitem img={j} name='For_You' color='red' size='x' price='30000' qty='2'p_id='1' i_id='1' setCartItems={setCartItems} setErrMsg={setErrMsg} showPopupNote={showPopupNote}/>
+                <Oneitem img={j} name='For_You' color='red' size='x' price='30000' qty='2'p_id='1' i_id='1' setCartItems={setCartItems} setErrMsg={setErrMsg} showPopupNote={showPopupNote}/>
+
                 {
                     cartItems.length?
                     cartItems.map((one,index)=>{
@@ -189,7 +196,8 @@ function Shoppingcardbody(props) {
                     cartItems.reduce((total,one)=>{
                         return total + (one.price*one.qty)
                     },0)
-                    :"0"
+                    // :"0"
+                    :"60000"
                 } s.p
             </div>
 

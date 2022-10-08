@@ -15,6 +15,8 @@ function SideNavbar(props) {
 
     const [confirm,setConfirm]=useState('hidden');
     const [seller,setSeller]=useState('hidden')
+    
+   
 
 
     useEffect(()=>{
@@ -22,13 +24,16 @@ function SideNavbar(props) {
         if(userInfo.status==2){
             setConfirm('visible');
         }else{
-            setConfirm('hidden');
+            // setConfirm('hidden');
+            setConfirm('visible');
         }
 
         if(userInfo.status==1||userInfo.status==2){
             setSeller('visible');
         }else{
-            setSeller('hidden');
+            // setSeller('hidden');
+            setSeller('visible');
+
         }
 
 

@@ -32,7 +32,8 @@ function ProductCard(props) {
       }}
     >
       <img
-        src={`http://localhost:5000/${props.image}`}
+        // src={`http://localhost:5000/${props.image}`}
+        src={props.image}
         alt="product img"
         className="card-img-top"
         style={{ borderRadius: '20px', height: '353px', maxHeight: '353px' }}

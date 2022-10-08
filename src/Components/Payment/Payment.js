@@ -158,7 +158,8 @@ function Payment(props) {
             </Link>
 
             <div style={{ marginTop: '10px', fontSize: '15px' }}>
-              Hello , {user.name}
+              Hello , user 
+              {user.name}
             </div>
 
             <HeaderImage image={image}
@@ -178,7 +179,8 @@ function Payment(props) {
                   alignItems: 'center',
                 }}
               >
-                <Paragraph>{user.income} S.P</Paragraph>
+                <Paragraph>{user.income}
+                2000000 S.P</Paragraph>
                 <button
                   style={{
                     background: 'none',
@@ -196,7 +198,8 @@ function Payment(props) {
 
             <PaymentsInfo style={{ margin: '0px 5%' }}>
               <Paragraph>Balance</Paragraph>
-              <Paragraph>{user.totalBalance} S.P</Paragraph>
+              <Paragraph>{user.totalBalance}
+              1900000 S.P</Paragraph>
             </PaymentsInfo>
 
             <PaymentsInfo>
@@ -209,7 +212,8 @@ function Payment(props) {
                   alignItems: 'center',
                 }}
               >
-                <Paragraph>{user.totalPayments} S.P </Paragraph>
+                <Paragraph>{user.totalPayments}
+                100000 S.P </Paragraph>
 
                 <Link
                   to="/Mangment/Dashbord"
@@ -350,6 +354,14 @@ function Payment(props) {
               width: '97%',
             }}
           >
+
+              <PaymentItem
+                  name='Trip'
+                  value='100000'
+                  date='21-3-2022'
+                  type='Entertainment'
+                />
+             
             {payment.map((pay, index) => {
               return (
                 <PaymentItem
@@ -361,6 +373,7 @@ function Payment(props) {
                 />
               );
             })}
+
           </div>
         </Content>
       </InnerContainer>

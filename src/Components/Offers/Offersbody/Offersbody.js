@@ -10,6 +10,8 @@ import $ from 'jquery';
 // import { Sort } from '@mui/icons-material';
 import { Sort } from '@mui/icons-material';
 import SleepingPopup from '../../PopUp/SleepingPopup';
+import j from '../../../Images/Background.jpg';
+
 
 function Offersbody(props) {
   const [manChecked, setmanChecked] = useState(true);
@@ -873,6 +875,10 @@ function Offersbody(props) {
         </div>
       </div>
       <div className="product-offers">
+                <ProductCard image={j} desc='Cotton Black Shirt' oldprice='30000' newprice='20000' id='1'/>   
+                <ProductCard image={j} desc='Cotton Black Shirt' oldprice='30000' newprice='20000' id='2'/>
+                <ProductCard image={j} desc='Cotton Black Shirt' oldprice='30000' newprice='20000' id='3'/>
+                <ProductCard image={j} desc='Cotton Black Shirt' oldprice='30000' newprice='20000' id='4'/>
         {offer
           ? offer.map((one, index) => {
               // if (one.shops[index].oldPrice !== one.shops[index].newPrice)
